@@ -24,12 +24,14 @@ class _CalendarState extends State<Calendar> {
 
   List<String> days = ['D', 'S', 'T', 'Q', 'Q', 'S', 'S'];
 
-  Widget createItem((int, int) e) {
-    if (e.$1 != now.month) {
+  Widget createItem((int, int, int) e) {
+    if (e.$2 != now.month) {
       return Container();
     }
 
-    if (widget.selectedDay.month == e.$1 && widget.selectedDay.day == e.$2) {
+    if (widget.selectedDay.year == e.$1 &&
+        widget.selectedDay.month == e.$2 &&
+        widget.selectedDay.day == e.$3) {
       return Container(
         margin: EdgeInsets.all(5),
         decoration: BoxDecoration(
@@ -38,7 +40,7 @@ class _CalendarState extends State<Calendar> {
         ),
         child: Center(
           child: Text(
-            e.$2.toString(),
+            e.$3.toString(),
             style: TextStyle(
               color: AppColors.inputs,
               fontWeight: FontWeight.w500,
@@ -48,12 +50,12 @@ class _CalendarState extends State<Calendar> {
       );
     }
     if (widget.enabledDays
-        .any((element) => element.month == e.$1 && element.day == e.$2)) {
+        .any((element) => element.month == e.$2 && element.day == e.$3)) {
       return MouseRegion(
         cursor: SystemMouseCursors.click,
         child: GestureDetector(
           onTap: () => widget.onDaySelected(
-            DateTime(now.year, e.$1, e.$2),
+            DateTime(now.year, e.$2, e.$3),
           ),
           child: Container(
             margin: EdgeInsets.all(5),
@@ -63,7 +65,7 @@ class _CalendarState extends State<Calendar> {
             ),
             child: Center(
               child: Text(
-                e.$2.toString(),
+                e.$3.toString(),
                 style: TextStyle(
                   color: AppColors.white,
                 ),
@@ -77,7 +79,7 @@ class _CalendarState extends State<Calendar> {
       color: Colors.transparent,
       child: Center(
         child: Text(
-          e.$2.toString(),
+          e.$3.toString(),
           style: TextStyle(
             color: AppColors.grey_hard,
           ),
@@ -86,18 +88,18 @@ class _CalendarState extends State<Calendar> {
     );
   }
 
-  List<(int mounth, int day)> getDayList() {
-    List<(int mounth, int day)> days = [];
+  List<(int year, int mounth, int day)> getDayList() {
+    List<(int year, int mounth, int day)> days = [];
 
     DateTime initialDate =
-        DateTime(now.year, now.month).subtract(Duration(days: now.weekday + 1));
+        DateTime(now.year, now.month).subtract(Duration(days: now.weekday - 1));
 
-    for (var i = 1; i <= 35; i++) {
+    for (var i = 0; i < 35; i++) {
       var date = initialDate.add(Duration(days: i));
       if (date.month == now.month) {
-        days.add((date.month, date.day));
+        days.add((date.year, date.month, date.day));
       } else {
-        days.add((date.month, date.day));
+        days.add((date.year, date.month, date.day));
       }
     }
     return days;

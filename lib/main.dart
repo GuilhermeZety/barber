@@ -15,7 +15,9 @@ void main() async {
     DeviceOrientation.portraitDown,
     DeviceOrientation.portraitUp,
   ]);
+  
   setPathUrlStrategy();
+
   runApp(
     ModularApp(
       module: AppModule(),
