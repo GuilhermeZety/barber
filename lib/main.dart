@@ -15,7 +15,7 @@ void main() async {
     DeviceOrientation.portraitDown,
     DeviceOrientation.portraitUp,
   ]);
-  
+
   setPathUrlStrategy();
 
   runApp(
@@ -25,5 +25,3 @@ void main() async {
     ),
   );
 }
-
-// CurrentSession session = CurrentSession();

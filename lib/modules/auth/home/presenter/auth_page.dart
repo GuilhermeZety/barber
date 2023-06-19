@@ -199,7 +199,7 @@ class _AuthPageState extends State<AuthPage> {
           ),
           Gap(24),
           Button(
-            onPressed: () async {},
+            onPressed: () async => _cubit.login(),
             child: Text(
               'Entrar',
               style: TextStyle(fontSize: 16),
@@ -295,7 +295,7 @@ class _AuthPageState extends State<AuthPage> {
           ),
           Gap(24),
           Button(
-            onPressed: () async {},
+            onPressed: () async => _cubit.login(),
             child: Text(
               'Cadastrar',
               style: TextStyle(fontSize: 16),
