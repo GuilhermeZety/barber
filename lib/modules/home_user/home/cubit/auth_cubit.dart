@@ -1,35 +1,27 @@
 import 'package:barber/core/common/constants/app_routes.dart';
 import 'package:bloc/bloc.dart';
 import 'package:equatable/equatable.dart';
-import 'package:flutter/material.dart';
 import 'package:flutter_modular/flutter_modular.dart';
 
 part 'auth_state.dart';
 
-class AuthCubit extends Cubit<AuthState> {
-  AuthCubit() : super(AuthLogin());
-
-  TextEditingController loginEmail = TextEditingController();
-  TextEditingController loginPassword = TextEditingController();
-
-  TextEditingController signupName = TextEditingController();
-  TextEditingController signupEmail = TextEditingController();
-  TextEditingController signupPassword = TextEditingController();
+class HomeUserCubit extends Cubit<HomeUserState> {
+  HomeUserCubit() : super(HomeUserLogin());
 
   void init() async {}
 
   void login() async {
-    // emit(AuthLoading());
+    // emit(HomeUserLoading());
     // await Future.delayed(Duration(seconds: 2));
 
     Modular.to.pushNamedAndRemoveUntil(AppRoutes.home_user, (_) => false);
-    emit(AuthLogin());
+    emit(HomeUserLogin());
   }
 
   void signup() async {
-    // emit(AuthLoading());
+    // emit(HomeUserLoading());
     // await Future.delayed(Duration(seconds: 2));
     Modular.to.pushNamedAndRemoveUntil(AppRoutes.home_user, (_) => false);
-    emit(AuthSignup());
+    emit(HomeUserSignup());
   }
 }

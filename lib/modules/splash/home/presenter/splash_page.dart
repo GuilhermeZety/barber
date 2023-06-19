@@ -18,7 +18,7 @@ class _SplashPageState extends State<SplashPage> {
   @override
   void initState() {
     Future.delayed(2.seconds, () {
-      Modular.to.pushNamedAndRemoveUntil(AppRoutes.auth, (p0) => false);
+      Modular.to.pushNamedAndRemoveUntil(AppRoutes.auth, (_) => false);
     });
     super.initState();
   }
@@ -31,6 +31,7 @@ class _SplashPageState extends State<SplashPage> {
           child: SvgPicture.asset(
             AppAssets.logo,
             width: 200,
+            height: 130,
           )
               .hero('logo')
               .animate(
