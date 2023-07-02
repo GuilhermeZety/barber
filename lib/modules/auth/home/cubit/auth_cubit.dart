@@ -19,9 +19,6 @@ class AuthCubit extends Cubit<AuthState> {
   void init() async {}
 
   void login() async {
-    // emit(AuthLoading());
-    // await Future.delayed(Duration(seconds: 2));
-
     Modular.to.pushNamedAndRemoveUntil(AppRoutes.home_user, (_) => false);
     emit(AuthLogin());
   }

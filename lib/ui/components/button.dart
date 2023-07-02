@@ -1,4 +1,5 @@
 import 'package:barber/ui/components/loader.dart';
+import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_vibrate/flutter_vibrate.dart';
 import 'package:barber/core/common/constants/app_colors.dart';
@@ -67,8 +68,9 @@ class _ButtonState extends State<Button> {
         isLoading = true;
         if (!mounted) return;
         setState(() {});
-
-        Vibrate.feedback(FeedbackType.light);
+        if (!kIsWeb) {
+          Vibrate.feedback(FeedbackType.light);
+        }
         await widget.onPressed!();
 
         isLoading = false;

@@ -31,5 +31,3 @@ void main() async {
     ),
   );
 }
-
-// CurrentSession session = CurrentSession();

@@ -1,5 +1,6 @@
 import 'package:auto_size_text/auto_size_text.dart';
 import 'package:bot_toast/bot_toast.dart';
+import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_vibrate/flutter_vibrate.dart';
 import 'package:gap/gap.dart';
@@ -14,7 +15,9 @@ class Toasting {
     String? subtitle,
     Duration? duration,
   }) {
-    Vibrate.feedback(FeedbackType.error);
+    if (!kIsWeb) {
+      Vibrate.feedback(FeedbackType.error);
+    }
     showNotification(
       context,
       color: Colors.red,
@@ -34,7 +37,9 @@ class Toasting {
     String? subtitle,
     Duration? duration,
   }) {
-    Vibrate.feedback(FeedbackType.success);
+    if (!kIsWeb) {
+      Vibrate.feedback(FeedbackType.success);
+    }
     showNotification(
       context,
       color: Colors.blue,
@@ -54,7 +59,9 @@ class Toasting {
     String? subtitle,
     Duration? duration,
   }) {
-    Vibrate.feedback(FeedbackType.success);
+    if (!kIsWeb) {
+      Vibrate.feedback(FeedbackType.success);
+    }
     showNotification(
       context,
       color: Colors.green,
@@ -74,7 +81,9 @@ class Toasting {
     String? subtitle,
     Duration? duration,
   }) {
-    Vibrate.feedback(FeedbackType.error);
+    if (!kIsWeb) {
+      Vibrate.feedback(FeedbackType.error);
+    }
     showNotification(
       context,
       color: Colors.red,
@@ -94,7 +103,9 @@ class Toasting {
     String? subtitle,
     Duration? duration,
   }) {
-    Vibrate.feedback(FeedbackType.warning);
+    if (!kIsWeb) {
+      Vibrate.feedback(FeedbackType.warning);
+    }
     showNotification(
       context,
       color: Colors.yellow.shade800,
