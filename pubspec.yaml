@@ -36,6 +36,7 @@ dependencies:
   flux_validator_dart: ^2.0.0
   flutter_svg: ^2.0.7
   url_strategy: ^0.2.0
+  firebase_core: ^2.14.0
 
 dev_dependencies:
   flutter_test:

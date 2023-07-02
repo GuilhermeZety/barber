@@ -20,7 +20,6 @@ class AppModule extends Module {
           transition: TransitionType.fadeIn,
           duration: 500.ms,
         ),
-
         ModuleRoute(
           AppRoutes.auth,
           module: AuthModule(),

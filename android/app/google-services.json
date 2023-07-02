@@ -1,0 +1,46 @@
+{
+  "project_info": {
+    "project_number": "559368787575",
+    "project_id": "barber-d47a8",
+    "storage_bucket": "barber-d47a8.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:559368787575:android:1925829a996025f2b61872",
+        "android_client_info": {
+          "package_name": "br.com.zety.barber"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "559368787575-43vijurrnhdmhklabmkk21pc1a5e7hbj.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBnCJlhAeoC091wF8MFsmaVW8Jq1iCAixg"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "559368787575-43vijurrnhdmhklabmkk21pc1a5e7hbj.apps.googleusercontent.com",
+              "client_type": 3
+            },
+            {
+              "client_id": "559368787575-6bvu04kt6qdu2dpqb7c4rkm9q1973h9o.apps.googleusercontent.com",
+              "client_type": 2,
+              "ios_info": {
+                "bundle_id": "br.com.zety.barber"
+              }
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
