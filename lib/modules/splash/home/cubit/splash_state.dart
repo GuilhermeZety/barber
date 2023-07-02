@@ -8,3 +8,7 @@ abstract class SplashState extends Equatable {
 }
 
 class SplashInitial extends SplashState {}
+
+class SplashLogged extends SplashState {}
+
+class SplashNotLogged extends SplashState {}

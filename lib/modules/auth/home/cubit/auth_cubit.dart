@@ -19,14 +19,14 @@ class AuthCubit extends Cubit<AuthState> {
   void init() async {}
 
   void login() async {
-    Modular.to.pushNamedAndRemoveUntil(AppRoutes.home_user, (_) => false);
+    Modular.to.pushNamedAndRemoveUntil(AppRoutes.homeUser, (_) => false);
     emit(AuthLogin());
   }
 
   void signup() async {
     // emit(AuthLoading());
     // await Future.delayed(Duration(seconds: 2));
-    Modular.to.pushNamedAndRemoveUntil(AppRoutes.home_user, (_) => false);
+    Modular.to.pushNamedAndRemoveUntil(AppRoutes.homeUser, (_) => false);
     emit(AuthSignup());
   }
 }

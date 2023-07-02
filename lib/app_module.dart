@@ -27,7 +27,7 @@ class AppModule extends Module {
           duration: 500.ms,
         ),
         ModuleRoute(
-          AppRoutes.home_user,
+          AppRoutes.homeUser,
           module: HomeUserModule(),
           transition: TransitionType.fadeIn,
           duration: 500.ms,

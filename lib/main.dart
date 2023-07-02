@@ -12,17 +12,16 @@ void main() async {
   WidgetsFlutterBinding.ensureInitialized();
   DartPingIOS.register();
 
-  await Firebase.initializeApp(
-    options: DefaultFirebaseOptions.currentPlatform,
-  );
-
-  ///
   SystemChrome.setPreferredOrientations([
     DeviceOrientation.portraitDown,
     DeviceOrientation.portraitUp,
   ]);
 
   setPathUrlStrategy();
+
+  firebaseApp = await Firebase.initializeApp(
+    options: DefaultFirebaseOptions.currentPlatform,
+  );
 
   runApp(
     ModularApp(
@@ -31,3 +30,5 @@ void main() async {
     ),
   );
 }
+
+late FirebaseApp firebaseApp;

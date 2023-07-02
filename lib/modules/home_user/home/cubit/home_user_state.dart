@@ -1,4 +1,4 @@
-part of 'auth_cubit.dart';
+part of 'home_user_cubit.dart';
 
 abstract class HomeUserState extends Equatable {
   const HomeUserState();
@@ -7,6 +7,4 @@ abstract class HomeUserState extends Equatable {
   List<Object> get props => [];
 }
 
-class HomeUserLogin extends HomeUserState {}
-
-class HomeUserSignup extends HomeUserState {}
+class HomeUserInitial extends HomeUserState {}
